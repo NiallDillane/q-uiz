@@ -12,8 +12,6 @@ show lastSensorValue:([sensor:()]time:();temp:())
 upd: {[t;v] $[t~`sensor; [insert[t;v]; [`lastSensorValue upsert flip `sensor`time`temp!(v 1 0 2)]]; 'notsensor]}
 
 
-
-
 -11! (getLogLength[`:../TPlogs/blQuizLog];`:../TPlogs/blQuizLog)
 
 /lastSensorValue: select last(time), last(temp) by sensor from sensor 
